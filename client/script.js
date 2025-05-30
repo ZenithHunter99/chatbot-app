@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const userInput = document.getElementById('userInput');
     const sendButton = document.getElementById('sendButton');
 
-    const BACKEND_URL = 'http://localhost:5000';
+    const BACKEND_URL = 'https://chatbot-app-1y1n.onrender.com';
 
     function appendMessage(sender, message, isTypingIndicator = false) {
         const messageDiv = document.createElement('div');
