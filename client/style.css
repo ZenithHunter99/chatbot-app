@@ -19,7 +19,7 @@ body {
     display: flex;
     flex-direction: column;
     overflow: hidden;
-    height: 80vh; /* Give it a fixed height for scrolling */
+    height: 80vh; 
 }
 
 .chat-display {
@@ -81,7 +81,6 @@ body {
     background-color: #218838;
 }
 
-/* Loading indicator styling */
 .loading-message {
     background-color: #f0f0f0;
     color: #555;
@@ -89,7 +88,6 @@ body {
     font-style: italic;
 }
 
-/* Basic responsiveness for smaller screens */
 @media (max-width: 768px) {
     body {
         padding: 10px;
@@ -97,6 +95,6 @@ body {
     .chat-container {
         border-radius: 0;
         box-shadow: none;
-        height: 98vh; /* Take more height on small screens */
+        height: 98vh; 
     }
 }

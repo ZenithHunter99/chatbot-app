@@ -1,5 +1,4 @@
-// server/server.js
-require('dotenv').config(); // Load environment variables from .env
+require('dotenv').config(); 
 
 const express = require('express');
 const cors = require('cors'); // For handling Cross-Origin requests
@@ -9,17 +8,15 @@ const app = express();
 const PORT = process.env.PORT || 5000;
 const GROQ_API_KEY = process.env.GROQ_API_KEY; // Get API key from .env
 
-// --- Essential Middleware ---
 app.use(cors()); // Allow all origins for development. For production, restrict this.
 app.use(express.json()); // Parse JSON request bodies
 
-// --- Verify API Key Presence ---
 if (!GROQ_API_KEY) {
     console.error("ERROR: GROQ_API_KEY is not set in the .env file!");
     process.exit(1); // Exit the process if key is missing
 }
 
-// --- Chat Endpoint ---
+
 app.post('/api/chat', async (req, res) => {
     const userMessage = req.body.message;
 
@@ -43,7 +40,7 @@ app.post('/api/chat', async (req, res) => {
                         content: userMessage
                     }
                 ],
-                model: 'llama3-8b-8192', // Or another suitable GROQ model
+                model: 'llama3-8b-8192', 
                 temperature: 0.7,
                 max_tokens: 200,
             },
@@ -55,7 +52,6 @@ app.post('/api/chat', async (req, res) => {
             }
         );
 
-        // Extract the AI's message
         const aiReply = groqResponse.data.choices[0]?.message?.content;
 
         if (aiReply) {
@@ -74,7 +70,6 @@ app.post('/api/chat', async (req, res) => {
     }
 });
 
-// --- Start Server ---
 app.listen(PORT, () => {
     console.log(`Backend server running on http://localhost:${PORT}`);
 });

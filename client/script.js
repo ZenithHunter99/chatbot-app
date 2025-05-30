@@ -1,10 +1,8 @@
-// client/script.js
 document.addEventListener('DOMContentLoaded', () => {
     const chatDisplay = document.getElementById('chatDisplay');
     const userInput = document.getElementById('userInput');
     const sendButton = document.getElementById('sendButton');
 
-    // Hardcode backend URL for simplicity (no build tools needed for .env)
     const BACKEND_URL = 'http://localhost:5000';
 
     function appendMessage(sender, message, isTypingIndicator = false) {
@@ -66,7 +64,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // Simple typing indicator animation (CSS dots are fine too)
+    // Simple typing indicator animation
     function animateTypingDots() {
         const style = document.createElement('style');
         style.textContent = `
