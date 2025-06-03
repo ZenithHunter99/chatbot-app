@@ -1,0 +1,38 @@
+/* Global styles and resets */
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: #333; /* Default text color for the app */
+  background-color: #242424; /* Fallback background, overridden by body below */
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Your provided body styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 20px;
+  background-color: #f0f2f5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  color: #333;
+  box-sizing: border-box; /* Include padding and border in the element's total width and height */
+}
+
+/* Basic reset to ensure full height for React app */
+#root {
+  height: 100%;
+  width: 100%;
+  display: flex; /* Allow App to take full space within body's flex */
+  justify-content: center;
+  align-items: center;
+}
