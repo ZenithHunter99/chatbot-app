@@ -18,7 +18,7 @@ app.use(cors({
   // This array allows requests from both your local development frontend (Vite's default)
   // and your deployed Vercel frontend.
   // IMPORTANT: Replace 'https://YOUR_VERCEL_FRONTEND_URL.vercel.app' with your actual Vercel URL!
-  origin: ['http://localhost:5173', 'https://chatbot-p787k1mtg-zenithhunter99s-projects.vercel.app/'],
+  origin: ['http://localhost:5173', 'https://chatbot-p787k1mtg-zenithhunter99s-projects.vercel.app'],
   methods: ['GET', 'POST'],
   allowedHeaders: ['Content-Type'],
 }));
