@@ -13,10 +13,12 @@ const port = process.env.PORT || 3001; // Use port 3001 for backend
 const groq = new Groq({ apiKey: process.env.GROQ_API_KEY });
 
 // Middleware
-// Enable CORS for all origins (for development)
-// In production, you should restrict this to your frontend domain.
+// Enable CORS for specified origins
 app.use(cors({
-  origin: 'http://localhost:5173', // Your React app's development server URL
+  // This array allows requests from both your local development frontend (Vite's default)
+  // and your deployed Vercel frontend.
+  // IMPORTANT: Replace 'https://YOUR_VERCEL_FRONTEND_URL.vercel.app' with your actual Vercel URL!
+  origin: ['http://localhost:5173', 'https://YOUR_VERCEL_FRONTEND_URL.vercel.app'],
   methods: ['GET', 'POST'],
   allowedHeaders: ['Content-Type'],
 }));
@@ -40,7 +42,7 @@ app.post('/chat', async (req, res) => {
   try {
     const chatCompletion = await groq.chat.completions.create({
       messages: formattedMessages,
-      model: "llama3-8b-8192", // You can choose other models available on Groq (e.g., 'mixtral-8x7b-32768')
+      model: "llama3-8b-8192", // You can choose other models available on Groq
       temperature: 0.7, // Adjust creativity (0.0 - 1.0)
       max_tokens: 1024, // Max tokens in the response
     });
